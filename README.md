@@ -1,2 +1,2 @@
 # LeetCode
-LeetCode 刷图记录
+LeetCode 刷题记录
