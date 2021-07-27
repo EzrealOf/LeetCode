@@ -5,8 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ezreal</groupId>
-    <artifactId>leetCode</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>LeetCode</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
-
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
+    </dependencies>
 </project>
