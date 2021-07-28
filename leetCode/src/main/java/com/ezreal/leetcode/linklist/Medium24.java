@@ -4,10 +4,19 @@ import static com.ezreal.leetcode.linklist.ListNode.createLinkList;
 import static com.ezreal.leetcode.linklist.ListNode.printLinkList;
 
 /**
- * Created on 2021/6/13.
+ * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
  *
- * @author Ezreal
- * @since 2.0.0
+ * 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+ *
+ * 输入：head = [1,2,3,4]
+ * 输出：[2,1,4,3]
+ *
+ * 输入：head = []
+ * 输出：[]
+ *
+ * 输入：head = [1]
+ * 输出：[1]
+ *
  */
 public class Medium24 {
 
@@ -25,7 +34,6 @@ public class Medium24 {
         }
         if (head.next == null) {
             return head;
-
         }
         ListNode t = new ListNode();
         t.next = head.next;
