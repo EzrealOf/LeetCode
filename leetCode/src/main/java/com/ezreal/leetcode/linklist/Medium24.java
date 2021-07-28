@@ -21,32 +21,26 @@ import static com.ezreal.leetcode.linklist.ListNode.printLinkList;
 public class Medium24 {
 
     public static void main(String[] args) {
-        int[] nums = {1, 2};
+        int[] nums = {};
         ListNode head = createLinkList(nums);
         printLinkList(head);
         ListNode listNode = swapPairs(head);
         printLinkList(listNode);
     }
 
-    public static ListNode swapPairs(ListNode head) {
-        if (head == null) {
+    public static ListNode swapPairs(ListNode node) {
+        if (node == null) {
             return null;
         }
-        if (head.next == null) {
-            return head;
+        if (node.next == null) {
+            return node;
         }
-        ListNode t = new ListNode();
-        t.next = head.next;
-        ListNode cur = head.next;
-        ListNode nex = cur.next;
-
-        while (nex != null) {
-            cur.next = head;
-            head.next = nex;
-            cur = nex.next;
-            nex = cur.next;
-        }
-        return t.next;
+        ListNode head = new ListNode();
+        head.next = node.next;
+        ListNode next = node.next.next;
+        node.next.next = node;
+        node.next =  swapPairs(next);;
+        return head.next;
     }
 
 }
