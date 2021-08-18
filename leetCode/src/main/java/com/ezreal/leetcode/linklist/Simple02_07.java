@@ -51,7 +51,7 @@ public class Simple02_07 {
         ListNode headB = createLinkList(numsB);
         System.out.println(headA);
         System.out.println(headB);
-        ListNode listNode = getIntersectionNode2(headA, headB);
+        ListNode listNode = getIntersectionNode(headA, headB);
         System.out.println(listNode);
     }
 
@@ -62,8 +62,41 @@ public class Simple02_07 {
         //calculate node lengths;
         Integer nodeALength = calculateLength(nodeA);
         Integer nodeBLength = calculateLength(nodeB);
-        return null;
+        //move nodes
+        ListNode headA = nodeA;
+        ListNode headB = nodeB;
 
+        if (nodeALength > nodeBLength) {
+            int i = nodeALength - nodeBLength;
+            while (i > 0) {
+                headA = headA.next;
+                i--;
+            }
+            while (nodeBLength > 0) {
+                if (headA.val == headB.val) {
+                    return headA;
+                }
+                headA = headA.next;
+                headB = headB.next;
+                nodeBLength--;
+            }
+        } else {
+            int i = nodeBLength - nodeALength;
+            while (i > 0) {
+                headB = headB.next;
+                i--;
+            }
+            while (nodeALength > 0) {
+                if (headA.val == headB.val) {
+                    return headA;
+                }
+                headA = headA.next;
+                headB = headB.next;
+                nodeALength--;
+            }
+
+        }
+        return null;
     }
 
     public static Integer calculateLength(ListNode node) {
