@@ -37,8 +37,8 @@ import java.util.Map;
 public class Easy242 {
 
     public static void main(String[] args) {
-       String s = "anagraq", t = "nagaram";
-        System.out.println(isAnagram(s,t));
+        String s = "anagraq", t = "nagaram";
+        System.out.println(isAnagram(s, t));
     }
 
     public static boolean isAnagram(String s, String t) {
@@ -52,14 +52,14 @@ public class Easy242 {
         }
         char[] tChars = t.toCharArray();
         for (int i = 0; i < t.length(); i++) {
-            Integer orDefault = resultMap.getOrDefault(tChars[i] - 'a', 0) - 1;
+            int orDefault = resultMap.getOrDefault(tChars[i] - 'a', 0) - 1;
             if (orDefault < 0) {
                 return false;
             }
             resultMap.put(tChars[i] - 'a', orDefault);
         }
         for (Integer value : resultMap.values()) {
-            if (value != 0){
+            if (value != 0) {
                 return false;
             }
         }
