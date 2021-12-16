@@ -29,8 +29,8 @@ public class Simple349 {
 //        int[] nums1 = {1,2,5};
         int[] nums2 = {9, 4, 9, 8, 4};
         int[] intersection = intersection(nums1, nums2);
-        for (int i = 0; i < intersection.length; i++) {
-            System.out.print(intersection[i] + "\t");
+        for (int j : intersection) {
+            System.out.print(j + "\t");
         }
 
     }
