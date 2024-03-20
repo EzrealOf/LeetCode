@@ -32,7 +32,7 @@ public class Simple1 {
         return new int[0];
     }*/
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> numsIndexMap = new HashMap<Integer, Integer>(nums.length);
+        Map<Integer, Integer> numsIndexMap = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             int other = target - nums[i];
             if (numsIndexMap.containsKey(other)){
